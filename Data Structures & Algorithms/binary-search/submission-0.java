@@ -1,0 +1,20 @@
+class Solution {
+    public int search(int[] nums, int target) {
+        int l = 0;
+        int r = nums.length -1;
+        int middle = (l + r)/2;
+        while (l<=r){
+            middle = (l + r)/2;
+            if(target>nums[middle]){
+                l = middle + 1;
+            }
+            else if (target<nums[middle]){
+                r = middle - 1;
+            }
+            else if (nums[middle]==target){
+                return middle;
+            }
+        }
+        return -1;
+    }
+}
